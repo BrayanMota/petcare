@@ -1,7 +1,7 @@
 # Apps e Models que devem ser ignorados ao renderizar o menu Core
 IGNORED_APPS = [
     "debug_toolbar",
-    # "dj_rest_auth",
+    "dj_rest_auth",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",

@@ -1,2 +1,3 @@
 # requirements-extras.in
 
+dj-rest-auth==6.0.0

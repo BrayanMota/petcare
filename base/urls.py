@@ -38,7 +38,9 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", BaseIndexTemplate.as_view(), name="index"),
     path("core/", include("core.urls", namespace="core")),
-    # Urls do Swagger
+    path("core/", include("usuario.urls", namespace="usuario")),
+path("core/", include("configuracao_core.urls", namespace="configuracao_core")),
+# Urls do Swagger
     path("swagger/", SpectacularAPIView.as_view(), name="schema"),
     path(
         "swagger-ui/",
@@ -51,7 +53,7 @@ urlpatterns = [
         name="redoc",
     ),
     # Url de autenticação do DRF
-    # path("auth/", include("dj_rest_auth.urls")),
+    path("auth/", include("dj_rest_auth.urls")),
     # URL de autenticação JWT
     path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),

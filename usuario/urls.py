@@ -14,3 +14,24 @@ urlpatterns = [
     path("usuario/userlogout/", UsuarioLogoutView.as_view(), name="logout"),
     path("usuario/userprofile/", UsuarioProfileView.as_view(), name="profile"),
 ]
+from usuario.views.index import UsuarioIndexTemplateView
+urlpatterns += [path('usuario/', UsuarioIndexTemplateView.as_view(), name='usuario-index'),]
+from django.urls import path, include
+from usuario.views.usuario import (
+    UsuarioCreateView,
+    UsuarioDetailView,
+    UsuarioDeleteView,
+    UsuarioListView,
+    UsuarioRestoreView,
+    UsuarioUpdateView
+)
+
+# URLs do Models Usuario
+urlpatterns += [
+    path("usuario/usuario/", UsuarioListView.as_view(), name="usuario-list"),
+    path("usuario/usuario/create/", UsuarioCreateView.as_view(), name="usuario-create"),
+    path("usuario/usuario/<uuid:pk>/", UsuarioDetailView.as_view(), name="usuario-detail"),
+    path("usuario/usuario/update/<uuid:pk>/", UsuarioUpdateView.as_view(), name="usuario-update"),
+    path("usuario/usuario/delete/<uuid:pk>/", UsuarioDeleteView.as_view(), name="usuario-delete"),
+    path("usuario/usuario/restore/<uuid:pk>/", UsuarioRestoreView.as_view(), name="usuario-restore"),
+]
