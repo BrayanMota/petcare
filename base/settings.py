@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     "tempus_dominus",
     # Django Rest Framework
     "drf_spectacular",
-    "dj_rest_auth",
+    # "dj_rest_auth",
     "rest_framework",
     "rest_framework.authtoken",
     # Apps do projeto

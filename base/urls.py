@@ -51,7 +51,7 @@ urlpatterns = [
         name="redoc",
     ),
     # Url de autenticação do DRF
-    path("auth/", include("dj_rest_auth.urls")),
+    # path("auth/", include("dj_rest_auth.urls")),
     # URL de autenticação JWT
     path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
