@@ -40,6 +40,7 @@ urlpatterns = [
     path("core/", include("core.urls", namespace="core")),
     path("core/", include("usuario.urls", namespace="usuario")),
 path("core/", include("configuracao_core.urls", namespace="configuracao_core")),
+path("core/", include("doenca.urls", namespace="doenca")),
 # Urls do Swagger
     path("swagger/", SpectacularAPIView.as_view(), name="schema"),
     path(

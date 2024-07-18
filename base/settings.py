@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework.authtoken",
     # Apps do projeto
+    "doenca",
 ]
 
 FASTAPI_APPS = []
