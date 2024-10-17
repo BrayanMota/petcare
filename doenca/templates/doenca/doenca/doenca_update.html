@@ -78,7 +78,7 @@ Delete (Deletar um novo registro via API)
             </div>
           {% endif %}
           <div class="form-row">
-            {% if form.nome in form.visible_fields %}<div class="form-group col-md-6">{{ form.nome.label_tag }}
+            {% if form.nome in form.visible_fields %}<div class="form-group col-md-12">{{ form.nome.label_tag }}
 {{ form.nome }}
 {% if form.nome.help_text %}                    <small class="form-text text-muted">                        {{ form.nome.help_text }}                    </small>                {% endif %}
 <div class="invalid-feedback">                        {{ form.nome.errors }}                </div></div>{% endif %}
@@ -86,14 +86,14 @@ Delete (Deletar um novo registro via API)
 {{ form.descricao }}
 {% if form.descricao.help_text %}                    <small class="form-text text-muted">                        {{ form.descricao.help_text }}                    </small>                {% endif %}
 <div class="invalid-feedback">                        {{ form.descricao.errors }}                </div></div>{% endif %}
-{% if form.sintomas in form.visible_fields %}<div class="form-group col-md-6">{{ form.sintomas.label_tag }}
-{{ form.sintomas }}
-{% if form.sintomas.help_text %}                    <small class="form-text text-muted">                        {{ form.sintomas.help_text }}                    </small>                {% endif %}
-<div class="invalid-feedback">                        {{ form.sintomas.errors }}                </div></div>{% endif %}
-{% if form.causas in form.visible_fields %}<div class="form-group col-md-6">{{ form.causas.label_tag }}
-{{ form.causas }}
-{% if form.causas.help_text %}                    <small class="form-text text-muted">                        {{ form.causas.help_text }}                    </small>                {% endif %}
-<div class="invalid-feedback">                        {{ form.causas.errors }}                </div></div>{% endif %}
+{% if form.sinais_clinicos in form.visible_fields %}<div class="form-group col-md-6">{{ form.sinais_clinicos.label_tag }}
+{{ form.sinais_clinicos }}
+{% if form.sinais_clinicos.help_text %}                    <small class="form-text text-muted">                        {{ form.sinais_clinicos.help_text }}                    </small>                {% endif %}
+<div class="invalid-feedback">                        {{ form.sinais_clinicos.errors }}                </div></div>{% endif %}
+{% if form.transmissao in form.visible_fields %}<div class="form-group col-md-6">{{ form.transmissao.label_tag }}
+{{ form.transmissao }}
+{% if form.transmissao.help_text %}                    <small class="form-text text-muted">                        {{ form.transmissao.help_text }}                    </small>                {% endif %}
+<div class="invalid-feedback">                        {{ form.transmissao.errors }}                </div></div>{% endif %}
 {% if form.tratamentos in form.visible_fields %}<div class="form-group col-md-6">{{ form.tratamentos.label_tag }}
 {{ form.tratamentos }}
 {% if form.tratamentos.help_text %}                    <small class="form-text text-muted">                        {{ form.tratamentos.help_text }}                    </small>                {% endif %}

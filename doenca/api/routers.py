@@ -20,4 +20,16 @@ router.register(r"diagnostico", DiagnosticoViewAPI, "diagnostico-api")
 router.register(r"diagnostico_readonly", DiagnosticoReadOnlyAPI, "diagnostico-readonly-api")
 
 
+
+from django.urls import include, path
+from rest_framework import routers
+from doenca.api.views.apresentacao import ApresentacaoReadOnlyAPI, ApresentacaoViewAPI
+
+
+
+# URL para a API Apresentacao
+router.register(r"apresentacao", ApresentacaoViewAPI, "apresentacao-api")
+router.register(r"apresentacao_readonly", ApresentacaoReadOnlyAPI, "apresentacao-readonly-api")
+
+
 urlpatterns = router.urls

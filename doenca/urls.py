@@ -74,3 +74,44 @@ urlpatterns += [
         name="diagnostico-restore",
     ),
 ]
+from django.urls import path, include
+from doenca.views.apresentacao import (
+    ApresentacaoCreateView,
+    ApresentacaoDetailView,
+    ApresentacaoDeleteView,
+    ApresentacaoListView,
+    ApresentacaoRestoreView,
+    ApresentacaoUpdateView,
+)
+
+# URLs do Models Apresentacao
+urlpatterns += [
+    path(
+        "doenca/apresentacao/", ApresentacaoListView.as_view(), name="apresentacao-list"
+    ),
+    path(
+        "doenca/apresentacao/create/",
+        ApresentacaoCreateView.as_view(),
+        name="apresentacao-create",
+    ),
+    path(
+        "doenca/apresentacao/<uuid:pk>/",
+        ApresentacaoDetailView.as_view(),
+        name="apresentacao-detail",
+    ),
+    path(
+        "doenca/apresentacao/update/<uuid:pk>/",
+        ApresentacaoUpdateView.as_view(),
+        name="apresentacao-update",
+    ),
+    path(
+        "doenca/apresentacao/delete/<uuid:pk>/",
+        ApresentacaoDeleteView.as_view(),
+        name="apresentacao-delete",
+    ),
+    path(
+        "doenca/apresentacao/restore/<uuid:pk>/",
+        ApresentacaoRestoreView.as_view(),
+        name="apresentacao-restore",
+    ),
+]

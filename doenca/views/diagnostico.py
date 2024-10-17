@@ -11,15 +11,15 @@ from doenca.models import Diagnostico
 from doenca.forms.diagnostico import DiagnosticoForm
 
 
-
 # Views do Models Diagnostico
 class DiagnosticoListView(BaseListView):
     """Classe para gerenciar a listagem do Diagnostico"""
+
     model = Diagnostico
     template_name = "doenca/diagnostico/diagnostico_list.html"
     context_object_name = "diagnostico"
-    list_display = ['descricao', 'doenca', 'nome', 'testes']
-    search_fields = ['descricao', 'doenca', 'nome', 'testes']
+    list_display = ["descricao", "doenca", "nome", "testes"]
+    search_fields = ["descricao", "doenca", "nome", "testes"]
     paginate_by = 10
 
     def get_context_data(self, **kwargs):
@@ -39,7 +39,8 @@ class DiagnosticoListView(BaseListView):
 
 
 class DiagnosticoDetailView(BaseDetailView):
-    """Classe para gerenciar o detalhe do Diagnostico """
+    """Classe para gerenciar o detalhe do Diagnostico"""
+
     model = Diagnostico
     form_class = DiagnosticoForm
     success_url = "doenca:diagnostico-list"
@@ -52,7 +53,8 @@ class DiagnosticoDetailView(BaseDetailView):
 
 
 class DiagnosticoCreateView(BaseCreateView):
-    """Classe para gerenciar o create do Diagnostico """
+    """Classe para gerenciar o create do Diagnostico"""
+
     model = Diagnostico
     form_class = DiagnosticoForm
     context_object_name = "diagnostico"
@@ -63,7 +65,8 @@ class DiagnosticoCreateView(BaseCreateView):
 
 
 class DiagnosticoUpdateView(BaseUpdateView):
-    """Classe para gerenciar a update do Diagnostico """
+    """Classe para gerenciar a update do Diagnostico"""
+
     model = Diagnostico
     form_class = DiagnosticoForm
     context_object_name = "diagnostico"
@@ -74,7 +77,8 @@ class DiagnosticoUpdateView(BaseUpdateView):
 
 
 class DiagnosticoDeleteView(BaseDeleteView):
-    """Classe para gerenciar o delete do Diagnostico """
+    """Classe para gerenciar o delete do Diagnostico"""
+
     model = Diagnostico
     form_class = DiagnosticoForm
     context_object_name = "diagnostico"
@@ -83,10 +87,12 @@ class DiagnosticoDeleteView(BaseDeleteView):
 
 
 class DiagnosticoRestoreView(BaseRestoreView):
-    """Classe para gerenciar o restore do Diagnostico """
+    """Classe para gerenciar o restore do Diagnostico"""
+
     model = Diagnostico
     context_object_name = "diagnostico"
     success_url = "doenca:diagnostico-list"
     template_name = "doenca/diagnostico/diagnostico_restore.html"
+
 
 # Fim das Views do Models Diagnostico
