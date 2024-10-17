@@ -1,6 +1,6 @@
 from drf_jsonmask.views import OptimizedQuerySetMixin
 from rest_framework import filters
-from rest_framework.authentication import SessionAuthentication
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet
 from rest_framework_simplejwt.authentication import JWTAuthentication
@@ -18,13 +18,26 @@ class ApresentacaoViewAPI(ModelViewSet):
     Retorne apenas os campos desejados com o parâmetro fields=campo1,campo2
     """
 
-    authentication_classes = [JWTAuthentication, SessionAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [
+    #     JWTAuthentication,
+    #     SessionAuthentication,
+    #     BasicAuthentication,
+    # ]
+    # permission_classes = [IsAuthenticated]
     queryset = Apresentacao.objects.select_related().all()
     serializer_class = ApresentacaoSerializer
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
-    search_fields = []
-    ordering_fields = []
+    search_fields = ["doenca__id"]
+    ordering_fields = ["ordem"]
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        # Verificar se há um parâmetro 'doenca' na URL
+        doenca_id = self.request.query_params.get("doenca", None)
+        if doenca_id:
+            # Filtrar as apresentações relacionadas à doença
+            queryset = queryset.filter(doenca__id=doenca_id)
+        return queryset
 
 
 class ApresentacaoReadOnlyAPI(OptimizedQuerySetMixin, ReadOnlyModelViewSet):
@@ -36,10 +49,23 @@ class ApresentacaoReadOnlyAPI(OptimizedQuerySetMixin, ReadOnlyModelViewSet):
     Retorne apenas os campos desejados com o parâmetro fields=campo1,campo2
     """
 
-    authentication_classes = [JWTAuthentication, SessionAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [
+    #     JWTAuthentication,
+    #     SessionAuthentication,
+    #     BasicAuthentication,
+    # ]
+    # permission_classes = [IsAuthenticated]
     queryset = Apresentacao.objects.select_related().all()
     serializer_class = ApresentacaoSerializer
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
-    search_fields = []
-    ordering_fields = []
+    search_fields = ["doenca__id"]
+    ordering_fields = ["ordem"]
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        # Verificar se há um parâmetro 'doenca' na URL
+        doenca_id = self.request.query_params.get("doenca", None)
+        if doenca_id:
+            # Filtrar as apresentações relacionadas à doença
+            queryset = queryset.filter(doenca__id=doenca_id)
+        return queryset
