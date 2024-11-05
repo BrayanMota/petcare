@@ -7,6 +7,7 @@ class ApresentacaoInline(admin.TabularInline):
     extra = 1
     fields = [
         "ordem",
+        "topico",
         "tipo_conteudo",
         "conteudo_texto",
         "conteudo_imagem",

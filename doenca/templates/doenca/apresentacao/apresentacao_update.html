@@ -75,7 +75,7 @@ Atualização de Doenca
         </div>
         {% endif %}
         <div class="form-row">
-          {% if form.doenca in form.visible_fields %}<div class="form-group col-md-5">{{ form.doenca.label_tag }}
+          {% if form.doenca in form.visible_fields %}<div class="form-group col-md-4">{{ form.doenca.label_tag }}
             {{ form.doenca }}
             {% if form.doenca.help_text %} <small class="form-text text-muted"> {{ form.doenca.help_text }} </small> 
             {% endif %}
@@ -87,7 +87,14 @@ Atualização de Doenca
             {% endif %}
             <div class="invalid-feedback"> {{ form.ordem.errors }} </div>
           </div>{% endif %}
-          {% if form.tipo_conteudo in form.visible_fields %}<div class="form-group col-md-5">
+          {% if form.topico in form.visible_fields %}<div class="form-group col-md-4">
+            {{ form.topico.label_tag }}
+            {{ form.topico }}
+            {% if form.topico.help_text %} <small class="form-text text-muted"> {{ form.topico.help_text
+              }} </small> {% endif %}
+            <div class="invalid-feedback"> {{ form.topico.errors }} </div>
+          </div>{% endif %}
+          {% if form.tipo_conteudo in form.visible_fields %}<div class="form-group col-md-2">
             {{ form.tipo_conteudo.label_tag }}
             {{ form.tipo_conteudo }}
             {% if form.tipo_conteudo.help_text %} <small class="form-text text-muted"> {{ form.tipo_conteudo.help_text
@@ -101,11 +108,11 @@ Atualização de Doenca
               {{ form.conteudo_texto.help_text }} </small> {% endif %}
             <div class="invalid-feedback"> {{ form.conteudo_texto.errors }} </div>
           </div>{% endif %}
-          {% if form.conteudo_imagem in form.visible_fields %}<div class="form-group col-md-6">{{
-            form.conteudo_imagem.label_tag }}<span class="text-muted ml-1">(Opcional)</span>
+          {% if form.conteudo_imagem in form.visible_fields %}<div class="form-group col-md-6">
+            {{ form.conteudo_imagem.label_tag }}<span class="text-muted ml-1">(Opcional)</span>
             {{ form.conteudo_imagem }}
-            {% if form.conteudo_imagem.help_text %} <small class="form-text text-muted"> {{
-              form.conteudo_imagem.help_text }} </small> {% endif %}
+            {% if form.conteudo_imagem.help_text %} <small class="form-text text-muted"> 
+              {{ form.conteudo_imagem.help_text }} </small> {% endif %}
             <div class="invalid-feedback"> {{ form.conteudo_imagem.errors }} </div>
           </div>{% endif %}
 

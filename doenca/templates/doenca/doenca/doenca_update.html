@@ -78,18 +78,21 @@ Delete (Deletar um novo registro via API)
             </div>
           {% endif %}
           <div class="form-row">
-            {% if form.nome in form.visible_fields %}<div class="form-group col-md-12">{{ form.nome.label_tag }}
+            {% if form.nome in form.visible_fields %}<div class="form-group col-md-6">{{ form.nome.label_tag }}
 {{ form.nome }}
 {% if form.nome.help_text %}                    <small class="form-text text-muted">                        {{ form.nome.help_text }}                    </small>                {% endif %}
 <div class="invalid-feedback">                        {{ form.nome.errors }}                </div></div>{% endif %}
-{% if form.descricao in form.visible_fields %}<div class="form-group col-md-6">{{ form.descricao.label_tag }}
+
+{% if form.imagem in form.visible_fields %}<div class="form-group col-md-6">{{ form.imagem.label_tag }}
+  {{ form.imagem }}
+  {% if form.imagem.help_text %}                    <small class="form-text text-muted">                        {{ form.imagem.help_text }}                    </small>                {% endif %}
+  <div class="invalid-feedback">                        {{ form.imagem.errors }}                </div></div>{% endif %}
+
+{% if form.descricao in form.visible_fields %}<div class="form-group col-md-12">{{ form.descricao.label_tag }}
 {{ form.descricao }}
 {% if form.descricao.help_text %}                    <small class="form-text text-muted">                        {{ form.descricao.help_text }}                    </small>                {% endif %}
 <div class="invalid-feedback">                        {{ form.descricao.errors }}                </div></div>{% endif %}
-{% if form.sinais_clinicos in form.visible_fields %}<div class="form-group col-md-6">{{ form.sinais_clinicos.label_tag }}
-{{ form.sinais_clinicos }}
-{% if form.sinais_clinicos.help_text %}                    <small class="form-text text-muted">                        {{ form.sinais_clinicos.help_text }}                    </small>                {% endif %}
-<div class="invalid-feedback">                        {{ form.sinais_clinicos.errors }}                </div></div>{% endif %}
+
 {% if form.transmissao in form.visible_fields %}<div class="form-group col-md-6">{{ form.transmissao.label_tag }}
 {{ form.transmissao }}
 {% if form.transmissao.help_text %}                    <small class="form-text text-muted">                        {{ form.transmissao.help_text }}                    </small>                {% endif %}

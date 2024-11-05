@@ -50,7 +50,7 @@ Criação de Doenca
         </div>
         {% endif %}
         <div class="form-row">
-          {% if form.doenca in form.visible_fields %}<div class="form-group col-md-5">{{ form.doenca.label_tag }}
+          {% if form.doenca in form.visible_fields %}<div class="form-group col-md-4">{{ form.doenca.label_tag }}
             {{ form.doenca }}
             {% if form.doenca.help_text %} <small class="form-text text-muted"> {{ form.doenca.help_text }} </small> 
             {% endif %}
@@ -62,7 +62,14 @@ Criação de Doenca
             {% endif %}
             <div class="invalid-feedback"> {{ form.ordem.errors }} </div>
           </div>{% endif %}
-          {% if form.tipo_conteudo in form.visible_fields %}<div class="form-group col-md-5">
+          {% if form.topico in form.visible_fields %}<div class="form-group col-md-4">
+            {{ form.topico.label_tag }}
+            {{ form.topico }}
+            {% if form.topico.help_text %} <small class="form-text text-muted"> 
+              {{ form.topico.help_text }} </small> {% endif %}
+            <div class="invalid-feedback"> {{ form.topico.errors }} </div>
+          </div>{% endif %}
+          {% if form.tipo_conteudo in form.visible_fields %}<div class="form-group col-md-2">
             {{ form.tipo_conteudo.label_tag }}
             {{ form.tipo_conteudo }}
             {% if form.tipo_conteudo.help_text %} <small class="form-text text-muted"> 

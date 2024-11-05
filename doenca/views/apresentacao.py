@@ -19,6 +19,7 @@ class ApresentacaoListView(BaseListView):
     template_name = "doenca/apresentacao/apresentacao_list.html"
     context_object_name = "apresentacao"
     list_display = [
+        "topico",
         "conteudo_imagem",
         "conteudo_texto",
         "doenca",
@@ -26,6 +27,7 @@ class ApresentacaoListView(BaseListView):
         "tipo_conteudo",
     ]
     search_fields = [
+        "topico",
         "conteudo_imagem",
         "conteudo_texto",
         "doenca",

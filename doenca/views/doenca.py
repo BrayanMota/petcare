@@ -19,18 +19,12 @@ class DoencaListView(BaseListView):
     template_name = "doenca/doenca/doenca_list.html"
     context_object_name = "doenca"
     list_display = [
-        "transmissao",
-        "descricao",
         "nome",
-        "sinais_clinicos",
-        "tratamentos",
+        "descricao",
     ]
     search_fields = [
-        "transmissao",
-        "descricao",
         "nome",
-        "sinais_clinicos",
-        "tratamentos",
+        "descricao",
     ]
     paginate_by = 10
 
